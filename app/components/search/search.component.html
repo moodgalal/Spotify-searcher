@@ -1,0 +1,24 @@
+<h2>What you need to listen ?</h2>
+<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus adipisci cum cumque deleniti, ea eligendi error esse eum explicabo incidunt labore omnis provident quo quod ratione sapiente voluptatem? Beatae</p>
+
+<form>
+    <div class="form-group">
+        <input class="form-control" type="text" title="" [(ngModel)] = "searchStr" name="searchStr" placeholder="Search for music" (keyup) = "search()">
+    </div>
+</form>
+
+<div *ngIf="myResult">
+  <div *ngFor="let artist of myResult">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="search-res well">
+                  <h4><a routerLink="/artist/{{artist.id}}">{{artist.name}}</a></h4>
+                  <div>
+                      <strong>Genres: </strong>
+                      <span *ngFor="let genre of artist.genres">{{genre}}</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
